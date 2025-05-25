@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakshya Divekar | AI/ML Enthusiast</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0e0e0e;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+
+    /* Navbar */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 10px 20px;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between; /* Distribute items */
+        align-items: center; /* Vertically align items */
+    }
+  
+    .navbar-left {
+        flex: 1; /* Make the left part take up all available space */
+    }
+    
+    .navbar-left .logo {
+        color: #00ffcc;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: flex-end; /* Align links to the right */
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        margin: 0 20px;
+    }
+    
+    nav a {
+        color: #00ffcc;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    
+    nav a:hover {
+        color: #fff;
+        border-bottom: 2px solid #00ffcc;
+        padding-bottom: 2px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: radial-gradient(circle at center, #1e1e1e, #0e0e0e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px; /* Adjust for navbar */
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      color: #ccc;
+      min-height: 50px;
+    }
+
+    .highlight {
+      color: #00ffcc;
+    }
+
+    .motivation {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #aaaaaa;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 10px 25px;
+      background-color: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Section Colors */
+    #about {
+      background-color: #121212;
+    }
+
+    #education {
+      background-color: #111a2c;
+    }
+
+    #skills {
+      background-color: #1a1a1a;
+    }
+
+    #contact {
+      background-color: #0e0e0e;
+    }
+
+    /* Section Headings */
+    #about h2 { color: #00ffff; }
+    #education h2 { color: #66ccff; }
+    #skills h2 { color: #00ff99; }
+    #contact h2 { color: #ff9933; }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* About Section */
+    #about {
+        background-color: #111; /* Dark background to match the theme */
+        padding: 80px 20px;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        position: relative;
+        color: #f0f0f0; /* Light text color for contrast */
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+        color: #fff; /* White for the section title */
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        font-weight: 700;
+    }
+    
+    .section-title::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: #00ffcc; /* Accent color for contrast */
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .about-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        animation: fadeInUp 1s ease-out forwards;
+    }
+    
+    .about-text {
+        flex: 1;
+        text-align: left;
+        font-size: 1.4rem;
+        color: #e0e0e0; /* Lighter text for readability */
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+    
+    .about-text strong {
+        color: #00ffcc; /* Accent color */
+    }
+    
+    .about-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        animation: fadeInRight 1.2s ease-out forwards;
+    }
+    
+    .about-image img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .about-image img:hover {
+        transform: scale(1.05);
+    }
+    
+    ul {
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+    
+    ul li {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+        color: #fff; /* White for headings */
+        margin-top: 30px;
+    }
+    
+    p {
+        font-size: 1.2rem;
+        color: #ddd; /* Lighter gray for text */
+        margin-top: 15px;
+    }
+    
+    @media (max-width: 768px) {
+        .about-content {
+        flex-direction: column;
+        text-align: center;
+        }
+    
+        .about-text {
+        font-size: 1.1rem;
+        }
+    
+        .about-image img {
+        max-width: 100%;
+        }
+    }
+    
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+        from {
+        opacity: 0;
+        transform: translateY(50px);
+        }
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInRight {
+        from {
+        opacity: 0;
+        transform: translateX(50px);
+        }
+        to {
+        opacity: 1;
+        transform: translateX(0);
+        }
+    }
+    
+    
+  
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-text {
+      font-size: 1.1rem;
+    }
+  }
+  /* Education Section */
+  #education {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
+    padding: 80px 20px;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+  }
+
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #00ffcc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+  }
+
+  .timeline-item .timeline-icon {
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #00ffcc;
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    left: -20px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-icon {
+    left: auto;
+    right: -20px;
+  }
+
+  .timeline-content {
+    background: #0f0c29;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 5;
+  }
+
+  .timeline-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #00ffcc;
+  }
+
+  .timeline-content p {
+    font-size: 1.1rem;
+    color: #dddddd;
+  }
+
+  @media screen and (max-width: 768px) {
+    .timeline::after {
+      left: 20px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      left: 0;
+      text-align: left;
+    }
+
+    .timeline-item .timeline-icon {
+      left: 0;
+    }
+  }
+  /* Skills Section */
+  #skills {
+    background: linear-gradient(135deg, #0f0c29, #302b63);
+    color: #ffffff;
+    padding: 80px 20px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,255,204,0.2);
+  }
+
+  .skill-card h3 {
+    color: #00ffcc;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+
+  .skill-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .skill-card ul li {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #eeeeee;
+  }
+
+  #projects {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
+    padding: 80px 20px;
+  }
+  
+  .project-tabs {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .tab-btn {
+    background: transparent;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-btn.active,
+  .tab-btn:hover {
+    background: #00ffcc;
+    color: #000;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
+  }
+  
+  .project-card h3 {
+    color: #00ffcc;
+    margin-bottom: 10px;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+    color: #ddd;
+  }
+  
+  .tag {
+    display: inline-block;
+    background-color: #00ffcc;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 5px 5px 0 0;
+  }
+  .contact-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #0e0e0e;
+    color: #fff;
+  }
+  
+  .contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-section p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 30px;
+  }
+  
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-icons .icon {
+    font-size: 24px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  
+  
+  .contact-icons .icon:hover {
+    transform: scale(1.2);
+    background: #00ffd5;
+    color: #000;
+  }
+  .feedback-section {
+    padding: 80px 20px;
+    background: #121212;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .feedback-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  #contact-form input::placeholder,
+  #contact-form textarea::placeholder {
+    color: #aaa;
+  }
+  
+  #contact-form button {
+    background: #00ffd5;
+    color: #000;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  #contact-form button:hover {
+    transform: scale(1.05);
+    background: #00e6c0;
+  }
+  .footer {
+    background-color: #0a0a0a;
+    color: #ffffff24;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    border-top: 1px solid #222;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  </style>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+      <div class="navbar-left">
+          <span class="logo"><a href="#home">Lakshya Divekar</a></span>
+        </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <h1>Hi, I'm <span class="highlight">Lakshya Divekar</span></h1>
+      <h2><span id="typed-text"></span></h2>
+      <p class="motivation">"Ideas to Impact — Building the Future, One Line of Code at a Time."</p>
+      <a href="#about" class="btn">Explore More</a>
+    </section>
+
+    <!-- About Me Section -->
+  <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I’m a 3rd-year Computer Science & Engineering student with a hacker's mindset and a builder’s vision. Currently on a mission to shape human-tech interaction through AI-powered products.
+            </p>
+            <p>
+              I co-ideated the concept for <strong>MeaDocs</strong> — an AI Multimedia Search App — which blends smart tech with daily use-cases.
+            </p>
+    
+            <h3>Currently Learning:</h3>
+            <ul>
+              <li>Data Analytics</li>
+              <li>Machine Learning & AI fundamentals</li>
+              <li>Flask (Backend APIs)</li>
+              <li>CLIP + FAISS (for image/video intelligence)</li>
+            </ul>
+    
+            <h3>Future Goal:</h3>
+            <p><strong>Launch MeaDocs & Some more revolutionary Project Which can create a Revolution in the Industry</strong></p>
+          </div>
+          <div class="about-image">
+            <img src="image.jpeg" alt="Lakshya Divekar">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Education / Journey Section -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">My Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-item" data-scroll>
+          <div class="timeline-icon">🎓</div>
+          <div class="timeline-content">
+            <h3>Padmaja H.S. School, Dewas (M.P.)</h3>
+            <p>Completed my schooling with a strong foundation in mathematics and logical reasoning.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-scroll>
+          <div class="timeline-icon">🏫</div>
+          <div class="timeline-content">
+            <h3>Malwa Institute of Technology, Indore</h3>
+            <p>B.Tech in Computer Science & Engineering (2022–2026)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-scroll>
+          <div class="timeline-icon">💼</div>
+          <div class="timeline-content">
+            <h3>Python Internship @ Technohacks</h3>
+            <p>Worked on Python basics, small automation scripts, and collaborative Git practices.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-scroll>
+          <div class="timeline-icon">🚀</div>
+          <div class="timeline-content">
+            <h3>Founder & Developer — MeaDocs</h3>
+            <p>AI Multimedia Search system that supports offline use. Built using Flask, CLIP, FAISS, Flutter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card" data-scroll>
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript (Basics)</li>
+            <li>C++</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-scroll>
+          <h3>AI / ML Tools</h3>
+          <ul>
+            <li>Scikit-learn</li>
+            <li>OpenCV</li>
+            <li>CLIP (OpenAI)</li>
+            <li>NumPy, Pandas, Matplotlib</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-scroll>
+          <h3>Web & App Dev</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Flask (API Development)</li>
+            <li>Flutter (Basics)</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-scroll>
+          <h3>🛠️ Tools & Platforms</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>VS Code, Postman</li>
+            <li>Google Colab</li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Tabs -->
+      <div class="project-tabs">
+        <button class="tab-btn active" data-tab="all">All</button>
+        <button class="tab-btn" data-tab="python">Python / AI</button>
+        <button class="tab-btn" data-tab="web">Web Dev</button>
+        <button class="tab-btn" data-tab="uiux">UI/UX</button>
+        <button class="tab-btn" data-tab="flutter">Flutter</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+
+              <!-- Project 1 -->
+      <a href="https://meadocs.netlify.app" target="_blank" class="project-card" data-category="python">
+        <h3>MeaDocs – AI Multimedia Search</h3>
+        <p>Offline search tool for images, video, docs & audio using CLIP + FAISS.</p>
+        <span class="tag">Python</span>
+        <span class="tag">Flask</span>
+        <span class="tag">AI</span>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="" target="_blank" class="project-card" data-category="web">
+        <h3>Personal Portfolio Website</h3>
+        <p>Animated portfolio built with HTML, CSS, JavaScript & ScrollReveal.</p>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="https://www.linkedin.com/posts/lakshya-divekar_ui-clone-flutter-design-activity-abcdefg" target="_blank" class="project-card" data-category="uiux">
+        <h3>Netflix Clone (UI Only)</h3>
+        <p>Pixel-perfect UI clone of Netflix using clean design principles.</p>
+        <span class="tag">UI/UX</span>
+        <span class="tag">HTML</span>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="https://www.linkedin.com/posts/lakshya-divekar_flutter-notes-ui-app-design-activity-hijklmn" target="_blank" class="project-card" data-category="flutter">
+        <h3>Flutter App UI - Notes App</h3>
+        <p>Beautiful UI layout for a modern notes app using Flutter.</p>
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+      </a>
+
+
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Let’s connect and build something amazing! 🚀</p>
+      <div class="contact-icons">
+        <a href="mailto:lakshyadivekar24@gmail.com" target="_blank" class="icon gmail">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/lakx.24/" target="_blank" class="icon insta">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/lakshya-divekar-498847246/" target="_blank" class="icon linkedin">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://x.com/lakx_24" target="_blank" class="icon twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Feedback / Enquiry Form -->
+    <section id="feedback" class="feedback-section">
+      <h2>Send Me a Message</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="form-status" style="margin-top: 10px;"></p>
+      </form>
+    </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Lakshya Divekar. All rights reserved.</p>
+  </footer>
+
+
+
+  <!-- Typed.js Init -->
+  <script>
+    var typed = new Typed("#typed-text", {
+      strings: ["Future-Ready AI Engineer 🚀", "AI/ML Enthusiast", "Tech Explorer"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
+
+  <!-- ScrollReveal Init -->
+  <script>
+    ScrollReveal().reveal('section', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+      reset: false
+    });
+  </script>
+  <script>
+    // ScrollReveal for About Section
+    ScrollReveal().reveal('#about', {
+        distance: '50px',
+        duration: 1200,
+        easing: 'ease-out',
+        origin: 'bottom',
+        opacity: 0,
+        delay: 200
+    });
+    
+    ScrollReveal().reveal('.about-text', {
+        delay: 300,
+        distance: '40px',
+        duration: 800,
+        origin: 'bottom',
+        opacity: 0,
+    });
+    
+    ScrollReveal().reveal('.about-image', {
+        delay: 500,
+        distance: '40px',
+        duration: 800,
+        origin: 'right',
+        opacity: 0,
+    });
+    
+  </script>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.timeline-item', {
+      delay: 100,
+      distance: '50px',
+      origin: 'bottom',
+      duration: 1000,
+      easing: 'ease-in-out',
+      interval: 200,
+      reset: false
+    });
+  </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('[data-scroll]', {
+      delay: 100,
+      distance: '40px',
+      origin: 'bottom',
+      duration: 800,
+      easing: 'ease-in-out',
+      interval: 100
+    });
+  </script>
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.project-card');
+  
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        tab.classList.add('active');
+  
+        const target = tab.getAttribute('data-tab');
+  
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (target === 'all' || category === target) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    ScrollReveal().reveal('.contact-section', {
+      origin: 'bottom',
+      distance: '50px',
+      duration: 1000,
+      delay: 200
+    });
+    ScrollReveal().reveal('.feedback-section', {
+      origin: 'bottom',
+      distance: '50px',
+      duration: 1000,
+      delay: 300
+    });
+    
+  </script>
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+  
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+  
+      try {
+        const response = await fetch("https://formspree.io/f/xwpododl", {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+  
+        if (response.ok) {
+          status.innerHTML = "✅ Thank you! Your message has been sent.";
+          status.style.color = "lightgreen";
+          form.reset();
+        } else {
+          status.innerHTML = "❌ Oops! Something went wrong.";
+          status.style.color = "red";
+        }
+      } catch (error) {
+        status.innerHTML = "⚠️ Error sending message. Try again later.";
+        status.style.color = "orange";
+      }
+    });
+  </script>
+
+</body>
+</html>
