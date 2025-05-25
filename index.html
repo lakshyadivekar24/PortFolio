@@ -26,6 +26,7 @@
 
     section {
       padding: 80px 20px;
+      scroll-margin-top: 80px;
     }
 
     h2 {
@@ -183,6 +184,8 @@
     #about {
         background-color: #111; /* Dark background to match the theme */
         padding: 80px 20px;
+        padding-top: 100px;
+        margin-top: -100px;
         text-align: center;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         position: relative;
@@ -665,6 +668,20 @@
   <!-- ScrollReveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 100); // allow time for DOM to render
+      }
+    }
+  });
+</script>
+
 <body>
 
     <!-- Navbar -->
