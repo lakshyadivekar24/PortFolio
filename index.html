@@ -668,19 +668,20 @@
   <!-- ScrollReveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-  <script>
-  window.addEventListener('DOMContentLoaded', () => {
+ <script>
+  window.onload = () => {
     const hash = window.location.hash;
     if (hash) {
       const target = document.querySelector(hash);
       if (target) {
         setTimeout(() => {
           target.scrollIntoView({ behavior: "smooth" });
-        }, 100); // allow time for DOM to render
+        }, 300); // wait a bit more
       }
     }
-  });
+  };
 </script>
+
 
 <body>
 
