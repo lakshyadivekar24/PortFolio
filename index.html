@@ -947,30 +947,44 @@
   </script>
   <script>
     // ScrollReveal for About Section
-    ScrollReveal().reveal('#about', {
+    window.onload = function () {
+      ScrollReveal().reveal('#about', {
         distance: '50px',
         duration: 1200,
         easing: 'ease-out',
         origin: 'bottom',
         opacity: 0,
         delay: 200
-    });
+      });
     
-    ScrollReveal().reveal('.about-text', {
+      ScrollReveal().reveal('.about-text', {
         delay: 300,
         distance: '40px',
         duration: 800,
         origin: 'bottom',
         opacity: 0,
-    });
+      });
     
-    ScrollReveal().reveal('.about-image', {
+      ScrollReveal().reveal('.about-image', {
         delay: 500,
         distance: '40px',
         duration: 800,
         origin: 'right',
         opacity: 0,
-    });
+      });
+    
+      // 🔁 Re-scroll to hash after ScrollReveal initializes
+      if (window.location.hash) {
+        const hash = window.location.hash;
+        setTimeout(() => {
+          const target = document.querySelector(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100); // slight delay to allow animations to register
+      }
+    };
+    
     
   </script>
 
